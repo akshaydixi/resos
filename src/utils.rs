@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 extern crate libc;
 
 use native::ProtobufObj;
@@ -45,7 +44,7 @@ fn pb_to_slice(pb: &ProtobufObj) -> &[u8] {
         ::std::mem::transmute(
             Slice {
                 data: pb.data as *const u8,
-                len: pb.size as uint
+                len: pb.size as usize
             }
         )
     }
